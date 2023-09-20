@@ -3,7 +3,7 @@ const productService = require('../services/ProductService');
 module.exports = {
 
     list(req ,  res){
-        let products = ProductService.getProducts(req.params);
+        let products = productService.getProducts(req.params);
         res.json({products})
     },
 
