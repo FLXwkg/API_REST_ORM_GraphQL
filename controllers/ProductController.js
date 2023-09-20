@@ -2,15 +2,17 @@ const productService = require('../services/ProductService');
 
 module.exports = {
 
-    listProducts(params){
+    list(req ,  res){
+        let products = ProductService.getProducts(req.params);
+        res.json({products})
     },
 
-    createProduct(params){
+    create(req , res){
     },
 
-    updateProduct(id , params){
+    update(req , res){
     },
 
-    deleteProduct(id){
+    delete(req , res){
     }
 }
