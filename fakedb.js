@@ -1,3 +1,4 @@
+// C'est pas beau les mots de passe en clair dans une BDD !!!
 module.exports = {
 
     users : [
@@ -7,6 +8,7 @@ module.exports = {
             "first_name": "Geneva",
             "last_name": "Welch",
             "gender": "female",
+            "role" : "ADMIN",
             "password": "Password574!@",
             "email": "genevawelch@rotodyne.com",
             "phone": "+1 (850) 407-3099",
@@ -19,6 +21,7 @@ module.exports = {
             "first_name": "Ethel",
             "last_name": "Jarvis",
             "gender": "female",
+            "role" : "ADMIN",
             "password": "Password7242!@",
             "email": "etheljarvis@rotodyne.com",
             "phone": "+1 (979) 527-2089",
@@ -31,6 +34,7 @@ module.exports = {
             "first_name": "Dominguez",
             "last_name": "Ray",
             "gender": "male",
+            "role" : "CUSTOMER",
             "password": "Password347!@",
             "email": "dominguezray@rotodyne.com",
             "phone": "+1 (859) 409-3003",
@@ -43,6 +47,7 @@ module.exports = {
             "first_name": "Stefanie",
             "last_name": "Melton",
             "gender": "female",
+            "role" : "CUSTOMER",
             "password": "Password3494!@",
             "email": "stefaniemelton@rotodyne.com",
             "phone": "+1 (970) 432-2144",
@@ -55,6 +60,7 @@ module.exports = {
             "first_name": "Dona",
             "last_name": "Head",
             "gender": "female",
+            "role" : "CUSTOMER",
             "password": "Password4968!@",
             "email": "donahead@rotodyne.com",
             "phone": "+1 (881) 527-2233",
@@ -69,7 +75,7 @@ module.exports = {
             "name": "Rotator",
             "description": "Un super produit à la pointe de la technologie",
             "creation_date": "Mon Oct 11 2016 01:36:29 GMT+0100 (heure normale d’Europe centrale)",
-            "price": 67
+            "price": 67,
         },
         {
             "_id": "613a10f0f7c0797b9bfb3e72",
@@ -85,6 +91,24 @@ module.exports = {
             "creation_date": "Mon Sep 21 1998 06:14:51 GMT+0200 (heure d’été d’Europe centrale)",
             "price": 45
         }
+    ],
+
+    ratings : [
+        {
+            "product": "613a10f0b7cf7e05dd7b9bac",
+            "rate" : 3,
+            "comment" : "It is a good product ! I recommend it !"
+        },
+        {
+            "product": "613a10f0b7cf7e05dd7b9bac",
+            "rate" : 5,
+            "comment" : "Amazing product"
+        },
+        {
+            "product": "613a10f08b796bc2f7cadd70",
+            "rate" : 4,
+            "comment" : "I'm very satisfied by this product"
+        },
     ]
 
 }
