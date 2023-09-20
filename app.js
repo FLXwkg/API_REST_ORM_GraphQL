@@ -4,6 +4,14 @@ const productController = require('./controllers/ProductController');
 const app = express();
 const port = 3000;
 global.FAKE_DB = require('./fakedb')
+class BusinessError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "BusinessError";
+    }
+}
+
+global.BusinessError = BusinessError;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
