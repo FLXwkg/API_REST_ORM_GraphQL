@@ -6,8 +6,10 @@ const port = 3000;
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/mds_tp_training_api');
 
+global.mongoose = mongoose;
 
-const User = mongoose.model('User', 
+
+global.User = mongoose.model('User', 
     { 
         "_id": { "type": "ObjectId" },
         "isActive": { "type": "Boolean"},
@@ -23,7 +25,7 @@ const User = mongoose.model('User',
 });
 
 
-const Product = mongoose.model('Product', 
+global.Product = mongoose.model('Product', 
     { 
         "_id": { "type": "ObjectId" },
         "name": { "type": "Boolean"},
