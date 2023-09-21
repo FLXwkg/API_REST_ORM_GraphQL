@@ -3,7 +3,44 @@ const bodyParser = require('body-parser')
 const productController = require('./controllers/ProductController');
 const app = express();
 const port = 3000;
-global.FAKE_DB = require('./fakedb')
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://127.0.0.1:27017/mds_tp_training_api');
+
+
+const User = mongoose.model('User', 
+    { 
+        "_id": { "type": "ObjectId" },
+        "isActive": { "type": "Boolean"},
+        "first_name": {"type": "String"},
+        "last_name": {"type": "String"},
+        "gender": {"type": "String"},
+        "role": {"type": "String"},
+        "password": {"type": "String"},
+        "email": {"type": "String"},
+        "phone": {"type": "String"},
+        "address": {"type": "String"},
+        "registered": {"type": "String"}
+});
+
+
+const Product = mongoose.model('Product', 
+    { 
+        "_id": { "type": "ObjectId" },
+        "name": { "type": "Boolean"},
+        "description": {"type": "String"},
+        "creation_date": {"type": "Date"},
+        "update_date": {"type": "Date"},
+        "price": {"type": "String"}
+});
+
+const ratings = mongoose.model('Rating', 
+    { 
+        "_id": { "type": "ObjectId" },
+        "product": { "type": "ObjectId" },
+        "rate": { "type": "Number"},
+        "comment": { "type": "String"},
+});
+
 class BusinessError extends Error {
     constructor(message) {
         super(message);
