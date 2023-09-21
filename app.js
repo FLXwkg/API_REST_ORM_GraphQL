@@ -30,15 +30,7 @@ const Product = mongoose.model('Product',
         "description": {"type": "String"},
         "creation_date": {"type": "Date"},
         "update_date": {"type": "Date"},
-        "price": {"type": "String"}
-});
-
-const ratings = mongoose.model('Rating', 
-    { 
-        "_id": { "type": "ObjectId" },
-        "product": { "type": "ObjectId" },
-        "rate": { "type": "Number"},
-        "comment": { "type": "String"},
+        "price": {"type": "Number"}
 });
 
 class BusinessError extends Error {
