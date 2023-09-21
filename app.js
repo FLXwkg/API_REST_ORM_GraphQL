@@ -19,7 +19,7 @@ const User = mongoose.model('User',
         "email": {"type": "String"},
         "phone": {"type": "String"},
         "address": {"type": "String"},
-        "registered": {"type": "String"}
+        "registered": {"type": "Date"}
 });
 
 

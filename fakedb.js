@@ -13,7 +13,7 @@ module.exports = {
             "email": "genevawelch@rotodyne.com",
             "phone": "+1 (850) 407-3099",
             "address": "162 Rochester Avenue, Hebron, Wyoming, 857",
-            "registered": "2018-12-09T09:46:57 -01:00"
+            "registered":new Date("2018-12-09T09:46:57 -01:00")
         },
         {
             "_id": "6139fd21aa670f11d559a9cb",
@@ -26,7 +26,7 @@ module.exports = {
             "email": "etheljarvis@rotodyne.com",
             "phone": "+1 (979) 527-2089",
             "address": "630 Dunne Court, Grandview, Oklahoma, 1282",
-            "registered": "2016-06-26T01:39:50 -02:00"
+            "registered": new Date("2016-06-26T01:39:50 -02:00")
         },
         {
             "_id": "6139fd21740267f066962bda",
@@ -39,7 +39,7 @@ module.exports = {
             "email": "dominguezray@rotodyne.com",
             "phone": "+1 (859) 409-3003",
             "address": "304 Clove Road, Yettem, Hawaii, 350",
-            "registered": "2014-06-14T06:59:04 -02:00"
+            "registered": new Date("2014-06-14T06:59:04 -02:00")
         },
         {
             "_id": "6139fd21dbe06a491d498a94",
@@ -52,7 +52,7 @@ module.exports = {
             "email": "stefaniemelton@rotodyne.com",
             "phone": "+1 (970) 432-2144",
             "address": "817 Strickland Avenue, Grill, New Jersey, 3093",
-            "registered": "2016-10-08T02:11:59 -02:00"
+            "registered": new Date("2016-10-08T02:11:59 -02:00")
         },
         {
             "_id": "6139fd2172cdbbe410f2be0c",
@@ -65,7 +65,7 @@ module.exports = {
             "email": "donahead@rotodyne.com",
             "phone": "+1 (881) 527-2233",
             "address": "912 Dennett Place, Katonah, Palau, 9522",
-            "registered": "2017-04-28T08:29:51 -02:00"
+            "registered": new Date("2017-04-28T08:29:51 -02:00")
         }
     ],
 
