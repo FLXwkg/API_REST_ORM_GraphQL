@@ -93,8 +93,10 @@ const products = [
 
 client.connect().then(async (db)=> {
     console.log("Connected to db")
+    await db.db('mds_tp_training_api').dropDatabase();
     await db.db('mds_tp_training_api').collection("users").insertMany(users);
     await db.db('mds_tp_training_api').collection("products").insertMany(products);
+    await client.close()
 })
    
 
