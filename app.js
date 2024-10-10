@@ -4,7 +4,7 @@ const productController = require('./controllers/ProductController');
 const app = express();
 const port = 3000;
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/mds_tp_training_api');
+mongoose.connect('');
 
 global.mongoose = mongoose;
 
@@ -28,7 +28,7 @@ global.User = mongoose.model('User',
 global.Product = mongoose.model('Product', 
     { 
         "_id": { "type": "ObjectId" },
-        "name": { "type": "Boolean"},
+        "name": { "type": "String"},
         "description": {"type": "String"},
         "creation_date": {"type": "Date"},
         "update_date": {"type": "Date"},
@@ -63,9 +63,10 @@ app.use((req , res , next) => {
  **********/
 
 // List products
-app.get('/product', (req, res) => {
+app.get('/product', async (req, res) => {
     if (productController.list) {
-        productController.list(req, res);
+        let data = await Product.find();
+		res.json(data);
     }else{
         throw new Error("Not implemented")
     }
