@@ -1,6 +1,10 @@
-const productDAO = require('../dao/ProductDAO');
+const ProductDAO = require('../dao/ProductDAO');
 
 module.exports = {
+    
+    async listProducts(params){
+        return await ProductDAO.listProducts();
+    },
 
 
 }

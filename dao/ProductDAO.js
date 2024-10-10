@@ -1,9 +1,7 @@
-let PRODUCT_COUNT = 0
-
 module.exports = {
 
-    findProducts(params){
-        return FAKE_DB.users;
+    async listProducts(params){
+        return await Product.find();
     },
 
     createProduct(params){
