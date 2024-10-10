@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const productRoutes = require('./routes/router.product');
 const productModel = require('./models/model.product');
 const userModel = require('./models/model.user');
-mongoose.connect('mongodb+srv://aelmaknati:AXKR3EPzKUFxzQRg@cluster0.mlyoc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect('');
 
 global.mongoose = mongoose;
 /**
