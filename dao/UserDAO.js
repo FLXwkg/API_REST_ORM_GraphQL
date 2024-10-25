@@ -4,6 +4,10 @@ module.exports = {
 
     findUserByLoginAndPassword : (email , password) => {
        
+    },
+
+    async listUsers(){
+        return await User.find();
     }
 
 }
