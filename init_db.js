@@ -1,7 +1,7 @@
 // C'est pas beau les mots de passe en clair dans une BDD !!!
 const {MongoClient} = require('mongodb');
 
-const client = new MongoClient("mongodb://127.0.0.1:27017/mds_tp_training_api");
+const client = new MongoClient("mongodb+srv://ewenheas13:2VpjH0XUpRw7OSSE@cluster0.1hhqk.mongodb.net/");
 
 const  users = [
     {

@@ -3,11 +3,12 @@ const bodyParser = require('body-parser')
 const app = express();
 const port = 3000;
 const mongoose = require('mongoose');
+const userRoutes = require('./routes/router.user');
 const productRoutes = require('./routes/router.product');
 const userRoutes = require('./routes/router.user');
 const productModel = require('./models/model.product');
 const userModel = require('./models/model.user');
-mongoose.connect('');
+mongoose.connect('mongodb+srv://ewenheas13:2VpjH0XUpRw7OSSE@cluster0.1hhqk.mongodb.net/mds_tp_training_api');
 
 global.mongoose = mongoose;
 /**
