@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-const express = require('express')
-const router = express.Router()
-=======
 const UserService = require("../services/UserService");
 const express = require('express')
 const router = express.Router()
@@ -34,5 +29,4 @@ router.delete('/:id', async (req, res) => {
     res.json(users);
 })
 
->>>>>>> 442546da71c5005e54e372913ddfbb5689ac80d7
 module.exports = router

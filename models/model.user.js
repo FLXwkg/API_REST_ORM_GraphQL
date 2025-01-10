@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 module.exports = mongoose.model('User', 
     { 
-        "_id": { "type": "ObjectId" },
         "isActive": { "type": "Boolean"},
         "first_name": {"type": "String"},
         "last_name": {"type": "String"},

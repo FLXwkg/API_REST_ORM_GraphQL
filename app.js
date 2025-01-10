@@ -5,8 +5,9 @@ const port = 3000;
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/router.user');
 const productRoutes = require('./routes/router.product');
-const userRoutes = require('./routes/router.user');
+const ratingRoutes = require('./routes/router.rating');
 const productModel = require('./models/model.product');
+const ratingModel = require('./models/model.rating');
 const userModel = require('./models/model.user');
 mongoose.connect('mongodb+srv://ewenheas13:2VpjH0XUpRw7OSSE@cluster0.1hhqk.mongodb.net/mds_tp_training_api');
 
@@ -16,6 +17,7 @@ global.mongoose = mongoose;
  */
 global.User = userModel;
 global.Product = productModel;
+global.Rating = ratingModel;
 
 class BusinessError extends Error {
     constructor(message) {
@@ -51,6 +53,7 @@ app.use((req , res , next) => {
  * ROUTES *
  **********/
 app.use("/product" ,productRoutes);
+app.use("/" ,ratingRoutes);
 app.use("/user" ,userRoutes);
 
 

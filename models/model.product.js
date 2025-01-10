@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 module.exports = mongoose.model('Product', 
     { 
-        "_id": { "type": "ObjectId" },
-        "name": { "type": "String"},
-        "description": {"type": "String"},
+        "name": { "type": "String", "required": true},
+        "description": {"type": "String", "required": true},
         "creation_date": {"type": "Date"},
         "update_date": {"type": "Date"},
-        "price": {"type": "Number"}
+        "price": {"type": "Number", "required": true}
 });
