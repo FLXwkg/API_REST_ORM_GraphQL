@@ -8,6 +8,10 @@ module.exports = {
 
     async listUsers(){
         return await User.find();
-    }
+    }, 
+    
+    /*async loginUser(params){
+        return await User.
+    }*/
 
 }

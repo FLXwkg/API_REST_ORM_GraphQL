@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
+require('express-async-errors')
 const port = 3000;
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/router.user');

@@ -18,4 +18,8 @@ module.exports = {
         return UserDAO.deleteUser(params);
     },
 
+    async loginUser(params){
+        return UserDAO.loginUser(params);
+    }
+
 }
