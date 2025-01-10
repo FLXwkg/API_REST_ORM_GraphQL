@@ -60,6 +60,15 @@ app.use("/user" ,userRoutes);
 /**************************************
  * MIDDLEWARES EXECUTED AFTER QUERY   *
  **************************************/
+app.use((err, req, res, next) => {
+    if(err.constructor.name == 'ValidationError'){
+        res.status(400).send('Invalid format : ' + err.message)
+    } else {
+        res.status(500).send("An error occured : " + err.message)
+    }
+    
+})
+
 console.log("Registered routes : ");
 for (let s of app._router.stack){
     if (s.route){
