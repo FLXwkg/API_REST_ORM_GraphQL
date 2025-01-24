@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/router.user');
 const productRoutes = require('./routes/router.product');
 const ratingRoutes = require('./routes/router.rating');
+const authRoutes = require('./routes/router.auth');
 const productModel = require('./models/model.product');
 const ratingModel = require('./models/model.rating');
 const userModel = require('./models/model.user');
@@ -53,6 +54,7 @@ app.use((req , res , next) => {
 /**********
  * ROUTES *
  **********/
+app.use("/", authRoutes)
 app.use("/product" ,productRoutes);
 app.use("/" ,ratingRoutes);
 app.use("/user" ,userRoutes);

@@ -10,8 +10,8 @@ module.exports = {
         return await User.find();
     }, 
     
-    /*async loginUser(params){
-        return await User.
-    }*/
+    async loginUser(email){
+        return await User.findOne({ email }).exec();
+    }
 
 }

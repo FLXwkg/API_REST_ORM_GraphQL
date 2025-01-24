@@ -9,11 +9,6 @@ router.get('/', async (req, res) => {
     let users = await UserService.listUsers();
     res.json(users);
 })
-/*
-router.post('/login', async (req, res) => {
-    let user = await UserService.loginUser(req.body);
-    res.json(user);
-})*/
 
 router.post('/:id', async (req, res) => {
     let id = req.params.id;

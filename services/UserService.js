@@ -18,8 +18,30 @@ module.exports = {
         return UserDAO.deleteUser(params);
     },
 
-    async loginUser(params){
-        return UserDAO.loginUser(params);
+    async loginUser(email, password, hashPassword){
+
+        // Fetch user by email
+        const user = await UserDAO.loginUser(email);
+
+        if (!user) {
+            return null; // User not found
+        }
+
+        // If the flag for hashing is true, hash the password and compare
+        if (hashPassword) {
+            const isPasswordValid = await bcrypt.compare(password, user.password);
+            if (!isPasswordValid) {
+                return null; // Password mismatch
+            }
+        } else {
+            // Compare passwords directly (no hashing)
+            if (password !== user.password) {
+                return null; // Password mismatch
+            }
+        }
+
+        return user;
+    
     }
 
 }
