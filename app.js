@@ -11,6 +11,7 @@ const authRoutes = require('./routes/router.auth');
 const productModel = require('./models/model.product');
 const ratingModel = require('./models/model.rating');
 const userModel = require('./models/model.user');
+const SecurityService = require('./services/SecurityService');
 mongoose.connect('mongodb+srv://ewenheas13:2VpjH0XUpRw7OSSE@cluster0.1hhqk.mongodb.net/mds_tp_training_api');
 
 global.mongoose = mongoose;
@@ -50,6 +51,19 @@ app.use((req , res , next) => {
       }, {});
     next();
 })
+
+// Auth
+app.use(/\/((?!login).)*/, (req , res , next) => {
+    let token = req.headers['authorization'] || '';
+
+    SecurityService.verifyToken(token.split(" ")[1] , (err) => {
+        if (err){
+            return res.status(401).send("Unauthorized");
+        }else{
+            next();
+        }
+    });
+});
 
 /**********
  * ROUTES *
