@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser')
+const swaggerUI = require('swagger-ui-express');
+const swaggerSpec = require('./swagger');
 const app = express();
 require('express-async-errors')
 const port = 3000;
@@ -42,6 +44,7 @@ app.use((req , res , next) => {
     console.log(new Date() ,req.method , req.path);
     next()
 })
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 // Moddle 
 app.use((req , res , next) => {
     req.query = Object.entries(req.query).reduce((r, [k, v]) => {
