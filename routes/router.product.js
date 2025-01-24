@@ -56,7 +56,7 @@ const upload = multer({
 
 /**
  * @swagger
- * /product:
+ * /product/:
  *   get:
  *     summary: Récupère la liste des produits
  *     parameters:
@@ -113,7 +113,7 @@ router.get('/', async (req, res) => {
 
 /**
  * @swagger
- * /product:
+ * /product/:
  *   post:
  *     summary: Crée un nouveau produit
  *     requestBody:
