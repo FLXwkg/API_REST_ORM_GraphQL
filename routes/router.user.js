@@ -7,6 +7,7 @@ const router = express.Router()
  */
 router.get('/', async (req, res) => {
     let users = await UserService.listUsers();
+    
     res.json(users);
 })
 

@@ -12,6 +12,7 @@ const productModel = require('./models/model.product');
 const ratingModel = require('./models/model.rating');
 const userModel = require('./models/model.user');
 const SecurityService = require('./services/SecurityService');
+const policies = require("./roles.config")
 mongoose.connect('mongodb+srv://ewenheas13:2VpjH0XUpRw7OSSE@cluster0.1hhqk.mongodb.net/mds_tp_training_api');
 
 global.mongoose = mongoose;
@@ -56,14 +57,27 @@ app.use((req , res , next) => {
 app.use(/\/((?!login).)*/, (req , res , next) => {
     let token = req.headers['authorization'] || '';
 
-    SecurityService.verifyToken(token.split(" ")[1] , (err) => {
+    SecurityService.verifyToken(token.split(" ")[1] , (err, user) => {
         if (err){
             return res.status(401).send("Unauthorized");
         }else{
+            req.user = user
             next();
         }
     });
 });
+
+app.use(/\/((?!login).)*/, (req , res , next) => {
+    let rolePolicy = policies[req.user.role] || [];
+    let matchingPolicy = rolePolicy.find((p) => {
+        return req.method == p.method && p.url.test(req._parsedUrl.path)
+    });
+    if(matchingPolicy == null){
+        return res.status(403).send('Forbidden')
+    }
+    next();
+});
+
 
 /**********
  * ROUTES *
